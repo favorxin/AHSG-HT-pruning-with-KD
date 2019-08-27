@@ -1,14 +1,14 @@
 # AHSG-HT-pruning-with-KD
 Filter pruning with knowledge distillation via hybrid stochastic gradient hard thresholding algorithm
 
-# We implement the hybrid stochastic gradient hard thresholding algorithm in AHSG-HT.py, and it's the optimization algorithm which can be 
+ We implement the hybrid stochastic gradient hard thresholding algorithm in AHSG-HT.py, and it's the optimization algorithm which can be 
 found in the paper：Efficient Stochastic Gradient Hard Thresholding. http://papers.nips.cc/paper/7469-efficient-stochastic-gradient-hard-thresholding.
 
-# We modify the code of soft filter pruning:https://github.com/he-y/soft-filter-pruning and implement our method.
-# We implement our method in Pytorch0.4.0.
+ We modify the code of soft filter pruning:https://github.com/he-y/soft-filter-pruning and implement our method.
+ We implement our method in Pytorch0.4.0.
 
-# We provide some pruned models along with knowledge distillation in /pruning with distillation.
-# The else pruned model with knowledge distillation can be found in 链接：https://pan.baidu.com/s/1psja-MthPZ1bLcNU22D7ng 
+ We provide some pruned models along with knowledge distillation in /pruning with distillation.
+ The else pruned model with knowledge distillation can be found in 链接：https://pan.baidu.com/s/1psja-MthPZ1bLcNU22D7ng 
 提取码：w8sx 
 
 # To adopt AHSG-HT optimization
@@ -34,7 +34,7 @@ You can put our dataloader.py and sampler.py into the above path and use the fol
             optimizer.step(None, k_sum,epoch,final)
             s=s+len(target)
 
-## The above code can be found in cifar10_resnet_test.py.
+ The above code can be found in cifar10_resnet_test.py.
 
 
 
