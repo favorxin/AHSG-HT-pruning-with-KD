@@ -19,8 +19,8 @@ dataloader.py and sampler.py which can be found in the path of env:
 anaconda/envs/pytorch(this is your env name)/lib/python3.6/site-packages/torch/utils/data/.
 You can put our dataloader.py and sampler.py into the above path and use the following code to change the mini-batch size.
 
-##    train_loader = torch.utils.data.DataLoader(train_data, batch_size=args.batch_size, k=args.k, shuffle=True,
-##                                                 num_workers=args.workers, pin_memory=True)
+    train_loader = torch.utils.data.DataLoader(train_data, batch_size=args.batch_size, k=args.k, shuffle=True,
+                                                num_workers=args.workers, pin_memory=True)
 # args.k is the step size which is added.
 
         if k_sum <= args.k:
@@ -35,7 +35,6 @@ You can put our dataloader.py and sampler.py into the above path and use the fol
             s=s+len(target)
 
 ## The above code can be found in cifar10_resnet_test.py.
-
 
 
 
