@@ -23,7 +23,7 @@ You can put our dataloader.py and sampler.py into the above path and use the fol
 ##                                                 num_workers=args.workers, pin_memory=True)
 # args.k is the step size which is added.
 
-##      if k_sum <= args.k:
+        if k_sum <= args.k:
             optimizer.update_HSG(zero1)
             optimizer.step(None, k_sum,epoch,final)
             k_sum=k_sum+0.1
