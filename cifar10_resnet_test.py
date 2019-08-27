@@ -48,7 +48,7 @@ parser.add_argument('--manualSeed', type=int, help='manual seed')
 parser.add_argument('--use_state_dict', dest='use_state_dict', action='store_true', help='use state dcit or not')
 
 parser.add_argument('--HTrate', type=float, default=0.1, help='Hardthreshold rate of model')
-parser.add_argument('--k', type=float, default=None, help='k multiply batch_size')
+parser.add_argument('--k', type=float, default=None, help='k add batch_size')
 parser.add_argument('--v', type=float, default=0.1, help='data variance')
 
 
