@@ -117,10 +117,11 @@ def main():
 
     print_log("=>small network :\n {}".format(net_small), log)
 
-    check = torch.load('./baseline_newres/b_cifar10_resnet110_0.7_2ci/best.resnet110.pth.tar')
+    ### load knowledge distillation's model  
+    #check = torch.load('./baseline_newres/b_cifar10_resnet110_0.7_2ci/best.resnet110.pth.tar')
     #check=torch.load('./vgg_prune/cifar10_vgg16_bn_0.7_a/best.vgg16_bn.pth.tar')
     #check = torch.load('./resnet_100/cifar100_resnet110_0.7_a/best.resnet110.pth.tar')
-    net.load_state_dict(check['state_dict'])
+    #net.load_state_dict(check['state_dict'])
 
     # define loss function (criterion) and optimizer
     criterion = torch.nn.CrossEntropyLoss()
@@ -174,17 +175,18 @@ def main():
 
     validate_net(test_loader, net, criterion, log)
 
-    for name_nor, param_nor in net.named_parameters():
-        if name_nor == 'classifier2.weight':
-            param_w_final = param_nor           
-        elif name_nor == 'classifier2.bias':
-            param_b_final = param_nor          
+    ### While loading the knowledge distillation's model, you should cancel the following notes.
+    #for name_nor, param_nor in net.named_parameters():
+    #    if name_nor == 'classifier2.weight':
+    #        param_w_final = param_nor           
+    #    elif name_nor == 'classifier2.bias':
+    #        param_b_final = param_nor          
 
-    for name_nor, param_nor in net_small.named_parameters():
-        if name_nor == 'classifier2.weight':
-            param_nor.data = param_w_final 
-        elif name_nor == 'classifier2.bias':
-            param_nor.data = param_b_final
+    #for name_nor, param_nor in net_small.named_parameters():
+    #    if name_nor == 'classifier2.weight':
+    #        param_nor.data = param_w_final 
+    #    elif name_nor == 'classifier2.bias':
+    #        param_nor.data = param_b_final
     
     filename = os.path.join(args.save_path, 'checkpoint.{:}.pth.tar'.format(args.arch))
     bestname = os.path.join(args.save_path, 'best.{:}.pth.tar'.format(args.arch))
