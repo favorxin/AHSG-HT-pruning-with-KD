@@ -1,6 +1,6 @@
 #import  pytorch_resnet_cifar10.resnet as resnet
 from models import *
-from Resnet32_nmodel import CifarResNet
+from Resnet_nmodel import CifarResNet
 import torch.backends.cudnn as cudnn
 cudnn.benchmark =True
 import torch.nn.parallel
